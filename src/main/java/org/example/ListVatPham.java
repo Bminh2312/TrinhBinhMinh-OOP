@@ -48,11 +48,12 @@ public class ListVatPham {
         System.out.println("Số vàng thu được: ");
         Scanner sc = new Scanner(System.in);
         int vang = sc.nextInt();
-        int sum = this.arr.stream().mapToInt(VatPham::getVang).sum();
-        if (vang > sum) {
-            System.out.println("Giải cứu thành công:");
+        int sum = this.arr.stream().mapToInt(v -> (int) (v.getVang()*v.SucCongPha())).sum();
+        System.out.println("Sum: " + sum);
+        if (vang >= sum) {
+            System.out.println("Spon đã giải cứu thành công");
         } else {
-            System.out.println("Giải cứu không thành công:");
+            System.out.println("Spon đã giải cứu không thành công:");
         }
     }
 
