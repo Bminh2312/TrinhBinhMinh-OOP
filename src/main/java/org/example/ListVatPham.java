@@ -53,7 +53,7 @@ public class ListVatPham {
         if (vang >= sum) {
             System.out.println("Spon đã giải cứu thành công");
         } else {
-            System.out.println("Spon đã giải cứu không thành công:");
+            System.out.println("Spon đã giải cứu không thành công: " +"Thiếu: " + (sum-vang) );
         }
     }
 
