@@ -40,8 +40,8 @@ public class ListVatPham {
     }
 
     public void cau3() {
-        int max = this.arr.stream().mapToInt(VatPham::getVang).max().orElse(0);
-        this.arr.stream().filter(v -> v.getVang() == max).forEach(System.out::println);
+        int max = this.arr.stream().mapToInt(v -> (int) (v.getVang()*v.SucCongPha())).max().orElse(0);
+        this.arr.stream().filter(v -> (int) (v.getVang()*v.SucCongPha()) == max).forEach(System.out::println);
     }
 
     public void cau4() {
